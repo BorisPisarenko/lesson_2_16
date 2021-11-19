@@ -186,7 +186,18 @@ console.log('   150 :', ageClassification(150)); // 150 : null
 // console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
 
 // console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+function oddFn(n) {
+    var arr = [];
+    var i = 0;
 
+    while (i++ < n) if (i % 2 !== 0) arr.push(i);
+
+    return arr;
+}
+
+console.log(oddFn(10)); // [1, 3, 5, 7, 9]
+console.log(oddFn(15)); // [1, 3, 5, 7, 9, 11, 13, 15]
+console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 /*
  * #8
  *
@@ -198,7 +209,11 @@ console.log('   150 :', ageClassification(150)); // 150 : null
  * Реализуйте проверку: если третьим параметром передается не функция, нужно вернуть false.
  *
  */
+function mainFunc(a, b, cb) {
+    if (cb && typeof cb === 'function') return cb(a, b);
 
+    return false;
+}
 /*
  * реализуйте следующие функции, которые будут осуществлять механизм callback в основной функции,
  * возвращая ей результат собственного вычисления...
@@ -206,11 +221,17 @@ console.log('   150 :', ageClassification(150)); // 150 : null
  */
 
 // cbRandom(a, b) – вычисляет и возвращает произвольное целое число в диапазоне между a и b включительно.
-
+function cbRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 // cbPow(a, b) – вычисляет и возвращает результат возведения числа a в степень b.
-
+function cbPow(num, pow) {
+    return Math.pow(num, pow);
+}
 // cbAdd(a, b) – вычисляет и возвращает сумму двух чисел a и b.
-
+function cbAdd(a, b) {
+    return a + b;
+}
 /*
  * mainFunc() должна возвращать результат работы переданной ей возвратной функции, например:
  * mainFunc(2, 5, cbRandom) → случайно от 2 до 5 включительно
@@ -227,3 +248,7 @@ console.log('   150 :', ageClassification(150)); // 150 : null
 // console.log(mainFunc(2, 5, cbAdd)); // 7
 
 // console.log(mainFunc(2, 5, 'not a func')); // false
+console.log(mainFunc(2, 5, cbRandom)); // целые числа в диапазоне 2..5
+console.log(mainFunc(2, 5, cbPow)); // 32
+console.log(mainFunc(2, 5, cbAdd)); // 7
+console.log(mainFunc(2, 5, 'not a func')); // false
