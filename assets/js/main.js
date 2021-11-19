@@ -1,19 +1,10 @@
 console.log('Sample JavaScript #2 HW #16');
 
-/*
- * #1
- *
- * Создайте объект userObj, описывающий человека.
- *
- * Следующие поля обязательны:
- * firstName – любое имя, строка
- * lastName – любая фамилия, строка
- * age – любой возраст, число
- */
+
 var userObj = {
     firstName: 'Boris',
     lastName: 'Pisarenko',
-    age: 20,
+    age: 35,
     fullName() {
         return `${userObj.firstName} ${userObj.lastName}`;
     }
@@ -21,18 +12,7 @@ var userObj = {
 
 console.log(userObj);
 
-/*
- * #2
- *
- * Для объекта из п.1 создайте метод fullName, который будет возвращать полное имя,
- * состоящее из firstName и lastName, склеенных в строку через пробел.
- *
- * Например:
- * userObj.firstName ← 'Имя
- * userObj.lastName ← Фамилия'
- * userObj.fullName() → 'Имя Фамилия'.
- * 
- */
+
 console.log(userObj.fullName());
 
 /*
@@ -82,7 +62,17 @@ console.log(defUpperStr());
 // console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
 
 // console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+function evenFn(n) {
+    let arr = [];
 
+    for (let i = 1; i <= n; i++) if (i % 2 === 0) arr.push(i);
+
+    return arr;
+}
+
+console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 /*
  * #5
  *
