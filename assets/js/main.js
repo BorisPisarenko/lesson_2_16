@@ -159,7 +159,7 @@ console.log('Sample JavaScript #2 HW #16');
  * oddFn(10) → [1, 3, 5, 7, 9]
  * oddFn(15) → [1, 3, 5, 7, 9, 11, 13, 15]
  * oddFn(20) → [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
- */sadasdczxvzx
+ */
 
 // console.log(oddFn(10)); // [1, 3, 5, 7, 9]
 
