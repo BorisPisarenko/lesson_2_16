@@ -31,8 +31,10 @@ console.log(userObj);
  * userObj.firstName ← 'Имя
  * userObj.lastName ← Фамилия'
  * userObj.fullName() → 'Имя Фамилия'.
+ * 
  */
-console.log(userObj.fullName()); // Name Last
+console.log(userObj.fullName());
+
 /*
  * #3
  *
@@ -50,6 +52,13 @@ console.log(userObj.fullName()); // Name Last
 // console.log(defUpperStr('My text')); // MY TEXT
 
 // console.log(defUpperStr()); // DEFAULT TEXT
+
+function defUpperStr(str) {
+    return (str || 'Default text').toUpperCase();
+}
+
+console.log(defUpperStr('My text'));
+console.log(defUpperStr());
 
 /*
  * #4
